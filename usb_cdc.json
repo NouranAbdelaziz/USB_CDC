@@ -1,0 +1,244 @@
+{
+    "info": {
+        "name": "USB_CDC",
+        "description": "An implementation of the Full Speed (12Mbit/s) USB communications device class",
+        "repo": "https://github.com/ulixxe/usb_cdc",
+        "owner": "Efabless Corp.",
+        "license": "APACHE 2.0",
+        "author": "Mohamed Shalan",
+        "email": "mshalan@efabless.com",
+        "version": "v1.0.0",
+        "date": "3-18-2023",
+        "category": "digital",
+        "tags": [
+            "peripheral",
+            "comm",
+            "usb",
+            "cdc"
+        ],
+        "bus": [
+            "generic"
+        ],
+        "type": "soft",
+        "status": "verified",
+        "cell_count": "1057",
+        "width": "0.0",
+        "height": "0.0",
+        "technology": "n/a",
+        "clock_freq_mhz": "10",
+        "supply_voltage": [
+            "n/a"
+        ],
+        "tech":[
+            "sky130":{
+                "gl_netlist": true,
+                "cell_count": "1285",
+                "is":"3.74",
+                "id":"18777"
+            }
+        ]
+    },
+    "regs": [
+        {
+            "name": "txdata",
+            "size": "8",
+            "mode": "fw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "wdata",
+                    "from": "0",
+                    "size": "8",
+                    "port": "tx_fifo_wdata"
+                }
+            ]
+        },
+        {
+            "name": "rxdata",
+            "size": "8",
+            "mode": "fr",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "rdata",
+                    "from": "0",
+                    "size": "8",
+                    "port": "rx_fifo_rdata"
+                }
+            ]
+        },
+        {
+            "name": "TXFIFOLEVEL",
+            "size": "4",
+            "mode": "ro",
+            "fields": [
+                {
+                    "name": "level",
+                    "from": "0",
+                    "size": "4",
+                    "port": "tx_fifo_level"
+                }
+            ]
+        },
+        {
+            "name": "RXFIFOLEVEL",
+            "size": "4",
+            "mode": "ro",
+            "fields": [
+                {
+                    "name": "level",
+                    "from": "0",
+                    "size": "4",
+                    "port": "rx_fifo_level"
+                }
+            ]
+        },
+        {
+            "name": "TXFIFOT",
+            "size": "4",
+            "mode": "rw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "value",
+                    "from": "0",
+                    "size": "4",
+                    "port": "tx_fifo_th"
+                }
+            ]
+        },
+        {
+            "name": "RXFIFOT",
+            "size": "4",
+            "mode": "rw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "value",
+                    "from": "0",
+                    "size": "4",
+                    "port": "rx_fifo_th"
+                }
+            ]
+        },
+        {
+            "name": "control",
+            "size": "1",
+            "mode": "rw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "en",
+                    "from": "0",
+                    "size": "1",
+                    "port": "en"
+                }
+            ]
+        }
+    ],
+    "interface": [
+        {
+            "name": "dp_pu_o",
+            "port": "dp_pu_o",
+            "dir": "output",
+            "size": "1"
+        },
+        {
+            "name": "dp_rx_i",
+            "port": "dp_rx_i",
+            "dir": "input",
+            "size": "1"
+        },
+        {
+            "name": "dn_rx_i",
+            "port": "dn_rx_i",
+            "dir": "input",
+            "size": "1"
+        },
+        {
+            "name": "dp_tx_o",
+            "port": "dp_tx_o",
+            "dir": "output",
+            "size": "1"
+        },
+        {
+            "name": "dn_tx_o",
+            "port": "dn_tx_o",
+            "dir": "output",
+            "size": "1"
+        },
+        {
+            "name": "tx_en_o",
+            "port": "tx_en_o",
+            "dir": "output",
+            "size": "1"
+        }
+
+    ],
+    "flags": [
+        {
+            "name": "tx_empty_flag",
+            "port": "tx_fifo_empty"
+        },
+        {
+            "name": "tx_below_flag",
+            "port": "tx_fifo_level_below"
+        },
+        {
+            "name": "rx_full_flag",
+            "port": "rx_fifo_full"
+        },
+        {
+            "name": "rx_above_flag",
+            "port": "rx_fifo_level_above"
+        }
+    ],
+    "clock": "clk",
+    "reset": {
+        "name": "rst_n",
+        "pol": "0"
+    },
+    "ports":[
+      {"name": "rx_fifo_rd", "size": "1"},
+      {"name": "rx_fifo_full", "size": "1"},
+      {"name": "rx_fifo_empty", "size": "1"},
+      {"name": "rx_fifo_level", "size": "4"},
+      {"name": "rx_fifo_rdata", "size": "8"},
+      {"name": "rx_fifo_th", "size": "4"},
+      {"name": "rx_fifo_level_above", "size": "1"},
+      {"name": "tx_fifo_wr", "size": "1"},
+      {"name": "tx_fifo_full", "size": "1"},
+      {"name": "tx_fifo_empty", "size": "1"},
+      {"name": "tx_fifo_level", "size": "4"},
+      {"name": "tx_fifo_wdata", "size": "8"},
+      {"name": "tx_fifo_th", "size": "4"},
+      {"name": "tx_level_below", "size": "1"},
+      {"name": "dp_pu_o", "size": "1"},
+      {"name": "dp_rx_i", "size": "1"},
+      {"name": "dn_rx_i", "size": "1"},
+      {"name": "dp_tx_o", "size": "1"},
+      {"name": "dn_tx_o", "size": "1"},
+      {"name": "tx_en_o", "size": "1"}
+
+    ],
+
+    "fifos": [
+        {
+            "depth": "16",
+            "width": 8,
+            "reg": "rxdata",
+            "type": "r",
+            "control_port": "rx_fifo_rd",
+            "data_port":"rx_fifo_rdata"
+        },
+        {
+            "depth": "16",
+            "width": 8,
+            "reg": "txdata",
+            "type": "w",
+            "control_port": "tx_fifo_wr",
+            "data_port":"tx_fifo_wdata"
+        }
+    ]
+        
+}
